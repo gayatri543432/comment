@@ -13,7 +13,7 @@ const spinner=document.getElementById('spinner')
 
 let commentArr=[];
 
-let BASE_URL='https://jsonplaceholder.typicode.com/'
+let BASE_URL='https://jsonplaceholder.typicode.com'
 let POST_URL=`${BASE_URL}/comments`
 
 function snackbar(msg,i){
@@ -57,6 +57,7 @@ function makeApiCall(method,api_url,body=null,successCb,errorCb){
     }
     xhr.onerror=function(){
         spinner.classList.add('d-none')
+         errorCb('Network Error')
     }
 }
 

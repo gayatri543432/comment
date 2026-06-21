@@ -199,10 +199,10 @@ function updateonUi(res){
     col.querySelector('.card-body h5').innerHTML=`Email:${res.email}`
     col.querySelector('.card-body p').innerHTML=res.body
 
-     let header=col.querySelector('.card-header');
+    let header=col.querySelector('.card-header');
     header.setAttribute('title',res.name);
     $(header).tooltip('dispose');
-    tooltips()
+    $(header).tooltip();
 
     col.classList.add('bg')
     col.scrollIntoView({
@@ -217,7 +217,7 @@ function updateonUi(res){
     commentForm.reset()
     addBtn.classList.remove('d-none')
     updateBtn.classList.add('d-none')
-    snackbar(`Comment with ID ${col} updated.. `,'success')
+    snackbar(`Comment with ID ${res.id} updated.. `,'success')
 }
 commentForm.addEventListener('submit',onSubmit)
 updateBtn.addEventListener('click',onUpdate)

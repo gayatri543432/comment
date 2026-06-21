@@ -196,7 +196,7 @@ function onUpdate(){
 function updateonUi(res){
     let col=document.getElementById(res.id)
     col.querySelector('.card-header h3').innerHTML=res.name;
-    col.querySelector('.card-body h5').innerHTML=res.email
+    col.querySelector('.card-body h5').innerHTML=`Email:${res.email}`
     col.querySelector('.card-body p').innerHTML=res.body
 
      let header=col.querySelector('.card-header');
@@ -214,7 +214,7 @@ function updateonUi(res){
         col.classList.remove('bg')
         
     }, 3000);
-
+    commentForm.reset()
     addBtn.classList.remove('d-none')
     updateBtn.classList.add('d-none')
     snackbar(`Comment with ID ${col} updated.. `,'success')
